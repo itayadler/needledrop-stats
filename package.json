@@ -1,0 +1,12 @@
+{
+  "name": "needledrop-stats",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Itay Adler <itayadler@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "highland": "^2.10.0",
+    "nightmare": "^2.8.1"
+  }
+}
