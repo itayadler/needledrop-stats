@@ -11,6 +11,7 @@ A calculated approach to finding great music to listen to by [theneedledrop.com]
 ## WIP
 
 [x] - Build a scraper that gets all the reviews data (rank, date, youtube id).
+
 [ ] - Create a site that offers visualizations and a quick search for reviews.
 
 ## DIY
