@@ -6,7 +6,7 @@ Project Needledrop Stats
 
 ## What is this?
 
-A calculated approach to finding great music to listen to by !(theneedledrop.com)[http://theneedledrop.com].
+A calculated approach to finding great music to listen to by ![theneedledrop.com](http://theneedledrop.com).
 
 ## WIP
 
