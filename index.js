@@ -1,6 +1,7 @@
 const hl = require('highland')
 const fs = require('fs')
 const getAllReviewsStream = require('./lib/reviews_scraper').getAllReviewsStream
+const { create, createDb } = require('./lib/review_model')
 
 function saveAllReviewsToFile(filePath){
   const reviewsStream = getAllReviewsStream()
@@ -11,4 +12,13 @@ function saveAllReviewsToFile(filePath){
   resultReviewsStream.pipe(fs.createWriteStream(filePath))
 }
 
-saveAllReviewsToFile("reviews.json")
+function saveAllReviewsToDb(dbPath) {
+  const db = createDb(dbPath)
+  getAllReviewsStream()
+    .filter((review)=> review.rank > -1)
+    .each((review)=> create(db, review))
+
+}
+
+// saveAllReviewsToFile("reviews.json")
+saveAllReviewsToDb("./tndstats.db")
