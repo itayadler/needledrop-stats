@@ -1,0 +1,16 @@
+{
+  "name": "theneedledrop-stats",
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "reason": {
+    "react-jsx": 3
+  },
+  "suffix": ".mjs",
+  "bs-dependencies": ["@rescript/react", "@glennsl/rescript-fetch", "@ryyppy/rescript-promise"]
+}

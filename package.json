@@ -2,16 +2,34 @@
   "name": "needledrop-stats",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "re:clean": "rescript clean",
+    "re:build": "rescript",
+    "re:watch": "rescript build -w",
+    "dev": "vite"
+  },
   "author": "Itay Adler <itayadler@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@glennsl/rescript-fetch": "^0.1.4",
+    "@rescript/react": "^0.10.3",
+    "@ryyppy/rescript-promise": "^2.1.0",
+    "@vitejs/plugin-react": "^3.0.0",
     "bluebird": "^3.4.6",
     "highland": "^2.10.0",
     "lodash": "^4.16.4",
     "playwright": "*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "request": "^2.88.2",
     "request-promise": "^4.1.1",
+    "rescript": "10.1.0-alpha.2",
     "spotify-web-api-node": "^5.0.2",
-    "sqlite3": "^5.0.8"
+    "sql.js": "^1.8.0",
+    "sqlite3": "^5.0.8",
+    "vite": "^4.0.3"
+  },
+  "devDependencies": {
+    "sass": "^1.57.1"
   }
 }
