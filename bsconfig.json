@@ -8,9 +8,9 @@
     "module": "es6",
     "in-source": true
   },
+  "suffix": ".mjs",
   "reason": {
     "react-jsx": 3
   },
-  "suffix": ".mjs",
-  "bs-dependencies": ["@rescript/react", "@glennsl/rescript-fetch", "@ryyppy/rescript-promise"]
+  "bs-dependencies": ["@rescript/react", "@glennsl/rescript-fetch", "@ryyppy/rescript-promise", "@minnozz/rescript-recharts"]
 }

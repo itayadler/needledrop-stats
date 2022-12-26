@@ -7,7 +7,7 @@ module ReactApp = {
 
 switch ReactDOM.querySelector("#root") {
 | Some(element) =>
-  let root = ReactDOM.Experimental.createRoot(element)
-  ReactDOM.Experimental.render(root, <ReactApp />)
+  let root = ReactDOM.Client.createRoot(element)
+  ReactDOM.Client.Root.render(root, <ReactApp />)
 | None => ()
 }

@@ -16,8 +16,8 @@ function init(locateFile) {
             });
 }
 
-async function loadDatabase(sql) {
-  var response = await fetch("/tndstats.db", {});
+async function loadDatabase(sql, url) {
+  var response = await fetch(url, {});
   var arrayBuffer = await response.arrayBuffer();
   return makeDatabase(sql, new Uint8Array(arrayBuffer));
 }

@@ -2,7 +2,7 @@
 
 import * as App from "./App.mjs";
 import * as React from "react";
-import * as ReactDom from "react-dom";
+import * as Client from "react-dom/client";
 
 function Root$ReactApp(Props) {
   return React.createElement(App.make, {});
@@ -15,7 +15,7 @@ var ReactApp = {
 var element = document.querySelector("#root");
 
 if (!(element == null)) {
-  var root = ReactDom.createRoot(element);
+  var root = Client.createRoot(element);
   root.render(React.createElement(Root$ReactApp, {}));
 }
 

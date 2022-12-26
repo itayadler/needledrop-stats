@@ -18,11 +18,11 @@ let init = (~locateFile)=> {
 	initSqlJs({locateFile: locateFile})
 }
 
-let loadDatabase = async (sql)=> {
+let loadDatabase = async (sql, ~url)=> {
   open Fetch
 
   let response = await fetch(
-    "/tndstats.db",
+    url,
 		{}
   )
 	let arrayBuffer = await arrayBuffer(response)
