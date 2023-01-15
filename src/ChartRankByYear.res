@@ -12,7 +12,7 @@ let mapDataToRecharts: array<{..}> => array<{..}> = %raw(`
 		}, []).map(row => {
       for(let i = 0; i <= 10; i++) {
         const rank = row["rank" + i]
-        if (!rank) row["rank" + i] = 0
+        if (!rank || rank == 0) row["rank" + i] = 0
       }
       return row
     })
@@ -34,6 +34,7 @@ let make = () => {
     <XAxis dataKey="name" />
     <YAxis />
     <Tooltip />
+    <Area _type=#monotone dataKey="rank0" stackId="a" fill="#2F2504" />
     <Area _type=#monotone dataKey="rank1" stackId="a" fill="#2F2504" />
     <Area _type=#monotone dataKey="rank2" stackId="a" fill="#443A1D" />
     <Area _type=#monotone dataKey="rank3" stackId="a" fill="#4F442A" />
