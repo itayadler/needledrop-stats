@@ -1,4 +1,10 @@
 body {
 	font-family: Calibri, Helvetica, Arial;
-	background: white;
+	background: #fcf281;
+}
+h2 {
+	-webkit-text-stroke: 1px black;
+	text-shadow: -2px 2px 2px black;
+	font-weight: bold;
+	color: white;
 }

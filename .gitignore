@@ -1,3 +1,4 @@
+.DS_Store
 lib/bs/**
 **/*.mjs
 node_modules

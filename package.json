@@ -18,6 +18,7 @@
     "@vitejs/plugin-react": "^3.0.0",
     "bluebird": "^3.4.6",
     "highland": "^2.10.0",
+    "knex": "^2.4.0",
     "lodash": "^4.16.4",
     "playwright": "*",
     "react": "^18.2.0",

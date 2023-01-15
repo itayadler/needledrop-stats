@@ -23,21 +23,21 @@ let make = () => {
 
   <>
 	<h2>{"Ranking distribution"->React.string}</h2>
-  <AreaChart width={1000} height={600} data={data}>
+  <AreaChart width={1000} height={600} data={data} >
     <CartesianGrid strokeDasharray="3 3" />
     <XAxis dataKey="name" />
     <YAxis />
     <Tooltip />
-    <Area dataKey="rank1" stackId="a" fill="#757761" />
-    <Area dataKey="rank2" stackId="a" fill="#959365" />
-    <Area dataKey="rank3" stackId="a" fill="#B5AF68" />
-    <Area dataKey="rank4" stackId="a" fill="#D5CB6B" />
-    <Area dataKey="rank5" stackId="a" fill="#F4E76E" />
-    <Area dataKey="rank6" stackId="a" fill="#DCF17E" />
-    <Area dataKey="rank7" stackId="a" fill="#C3FB8D" />
-    <Area dataKey="rank8" stackId="a" fill="#8FF7A7" />
-    <Area dataKey="rank9" stackId="a" fill="#70D9D3" />
-    <Area dataKey="rank10" stackId="a" fill="#51BBFE" />
+    <Area _type=#monotone dataKey="rank1" stackId="a" fill="#2F2504" />
+    <Area _type=#monotone dataKey="rank2" stackId="a" fill="#443A1D" />
+    <Area _type=#monotone dataKey="rank3" stackId="a" fill="#4F442A" />
+    <Area _type=#monotone dataKey="rank4" stackId="a" fill="#594E36" />
+    <Area _type=#monotone dataKey="rank5" stackId="a" fill="#6C6951" />
+    <Area _type=#monotone dataKey="rank6" stackId="a" fill="#7E846B" />
+    <Area _type=#monotone dataKey="rank7" stackId="a" fill="#929985" />
+    <Area _type=#monotone dataKey="rank8" stackId="a" fill="#A5AE9E" />
+    <Area _type=#monotone dataKey="rank9" stackId="a" fill="#BBC6BB" />
+    <Area _type=#monotone dataKey="rank10" stackId="a" fill="#D0DDD7" />
   </AreaChart>
 	</>
 }
