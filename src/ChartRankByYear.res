@@ -9,7 +9,13 @@ let mapDataToRecharts: array<{..}> => array<{..}> = %raw(`
 				memo.push({ name: row[2], ["rank" + row[0]]: row[1]})
 				return memo
 			}
-		}, [])
+		}, []).map(row => {
+      for(let i = 0; i <= 10; i++) {
+        const rank = row["rank" + i]
+        if (!rank) row["rank" + i] = 0
+      }
+      return row
+    })
 	}
 `)
 
