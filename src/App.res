@@ -1,6 +1,7 @@
 @react.component
 let make = () => {
-	<TNDStatsDB.Provider>
-		<ChartRankByYear />
-	</TNDStatsDB.Provider>
+  <TNDStatsDB.Provider>
+		<ReviewsTable />
+    <ChartRankByYear />
+  </TNDStatsDB.Provider>
 }

@@ -2,12 +2,13 @@
 
 import * as React from "react";
 import * as TNDStatsDB from "./TNDStatsDB.mjs";
+import * as ReviewsTable from "./ReviewsTable.mjs";
 import * as ChartRankByYear from "./ChartRankByYear.mjs";
 
 function App(Props) {
   return React.createElement(TNDStatsDB.Provider.make, {
-              children: React.createElement(ChartRankByYear.make, {})
-            });
+              children: null
+            }, React.createElement(ReviewsTable.make, {}), React.createElement(ChartRankByYear.make, {}));
 }
 
 var make = App;
