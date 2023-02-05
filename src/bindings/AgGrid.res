@@ -1,6 +1,13 @@
+
 module API = {
 	type t
 	@send external getSelectedRows: t => array<{..}> = "getSelectedRows"
+	@send external setQuickFilter: (t, string) => unit = "setQuickFilter"
+}
+
+type event = {
+	event: Js.Nullable.t<Dom.event>,
+	api: API.t,
 }
 
 module Grid = {
@@ -14,5 +21,5 @@ external make: (
 	~rowSelection: @string [ |#single | #multiple],
   ~rowData: array<{..}>,
   ~columnDefs: array<{..}>,
-	~onRowSelected: 'a => unit,
+	~onRowSelected: event => unit,
 ) => React.element = "AgGridReact"
