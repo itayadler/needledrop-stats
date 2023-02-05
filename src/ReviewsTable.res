@@ -28,18 +28,34 @@ let getColumnDefs: array<{..}> => array<{..}> = %raw(`
 	}
 `)
 
+let rowSelection = #single
+
 @react.component
-let make = ()=> {
-  let data =
-    TNDStatsDB.Context.useQueryDB(
-      "select youtube_id, artist_name as artist, album_name as album, rank, pitchfork_rank as 'pitchfork rank', pitchfork_genre as 'pitchfork genre', spotify_followers as 'spotify followers', strftime('%Y', DATETIME(cast (created_at as INTEGER)/1000, 'unixepoch')) as year from reviews;",
-    )
-		let rowData = data->getRowData
-		let columnDefs = data->getColumnDefs
-		<>
-		<h2>{"Reviews table"->React.string}</h2>
-		<div className="ag-theme-alpine-dark" style={ReactDOM.Style.make(~height="50vh", ~width="80vw", ())}>
-			<AgGrid rowData columnDefs />
-		</div>
-		</>
+let make = () => {
+	let gridRef = React.useRef(Js.Nullable.null)
+	let (selectedRow, setSelectedRow) = React.useState(()=> None)
+  let data = TNDStatsDB.Context.useQueryDB(
+    "select youtube_id, artist_name as artist, album_name as album, rank, pitchfork_rank as 'pitchfork rank', pitchfork_genre as 'pitchfork genre', spotify_followers as 'spotify followers', strftime('%Y', DATETIME(cast (created_at as INTEGER)/1000, 'unixepoch')) as year from reviews;",
+  )
+	let data = React.useMemo1(()=> data, [Js.Array2.length(data)])
+	let onRowSelected = (e)=> (
+		switch e["event"]->Js.Nullable.toOption {
+			| Some(_e)=> setSelectedRow(_ => 
+				e["api"]->AgGrid.API.getSelectedRows->Belt.Array.get(0)
+			)
+			| None => ()
+		}
+	)
+  let rowData = React.useMemo1(()=> data->getRowData, [data])
+  let columnDefs = React.useMemo1(() => data->getColumnDefs, [data])
+	let agGrid = React.useMemo2(() => <AgGrid ref={gridRef} rowSelection rowData columnDefs onRowSelected />, (rowData, columnDefs))
+  <>
+    <h2> {"Reviews table"->React.string} </h2>
+		<p> {`Selected row rank ${selectedRow->Belt.Option.map(row => row["rank"])->Belt.Option.getWithDefault("n/a")}`->React.string} </p>
+    <div
+      className="ag-theme-alpine-dark"
+      style={ReactDOM.Style.make(~height="50vh", ~width="80vw", ())}>
+			agGrid
+    </div>
+  </>
 }
