@@ -1,3 +1,5 @@
+[![Deploy static content to Pages](https://github.com/itayadler/needledrop-stats/actions/workflows/deploy.yml/badge.svg)](https://github.com/itayadler/needledrop-stats/actions/workflows/deploy.yml)
+
 Project Needledrop Stats
 ==========================
 
@@ -7,12 +9,6 @@ Project Needledrop Stats
 ## What is this?
 
 A calculated approach to finding great music to listen to by [theneedledrop.com](http://theneedledrop.com).
-
-## WIP
-
-[x] - Build a scraper that gets all the reviews data (rank, date, youtube id).
-
-[ ] - Create a site that offers visualizations and a quick search for reviews.
 
 ## DIY
 
