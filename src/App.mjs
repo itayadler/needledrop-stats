@@ -9,7 +9,7 @@ import * as ChartRankByYear from "./ChartRankByYear.mjs";
 function App(Props) {
   return React.createElement(TNDStatsDB.Provider.make, {
               children: null
-            }, React.createElement(ChartByGenre.make, {}), React.createElement(ReviewsTable.make, {}), React.createElement(ChartRankByYear.make, {}));
+            }, React.createElement(ReviewsTable.make, {}), React.createElement(ChartByGenre.make, {}), React.createElement(ChartRankByYear.make, {}));
 }
 
 var make = App;
