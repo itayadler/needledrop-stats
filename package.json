@@ -8,6 +8,7 @@
     "re:watch": "rescript build -w",
     "dev": "vite",
     "build": "vite build",
+    "ci:build": "yarn re:build && vite build",
     "preview": "vite preview"
   },
   "author": "Itay Adler <itayadler@gmail.com>",
