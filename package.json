@@ -35,7 +35,7 @@
     "rescript-webapi": "^0.8.0",
     "spotify-web-api-node": "^5.0.2",
     "sql.js": "^1.8.0",
-    "sqlite3": "^5.0.8",
+    "sqlite3": "^5.1.5",
     "vite": "*"
   },
   "devDependencies": {
