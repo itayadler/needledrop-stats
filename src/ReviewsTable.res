@@ -58,6 +58,7 @@ module YearSelect = {
   @react.component
 	let make = (~year, ~setYear)=> {
 		<>
+		<h3>{"Select a year"->React.string}</h3>
 		<select className="year-select" onChange={(e)=> {
 			let target = e->ReactEvent.Form.target
 			let value = target["selectedIndex"]
@@ -80,7 +81,7 @@ let make = () => {
 	let setGenre = React.useCallback1(genre => setState((prev)=> {...prev, genre: genre}), [setState])
 	let setYear = React.useCallback1(year => setState((prev)=> {...prev, year: year}), [setState])
 	let gridRef = React.useRef(Js.Nullable.null)
-	let (selectedRow, setSelectedRow) = React.useState(()=> None)
+	let (_selectedRow, setSelectedRow) = React.useState(()=> None)
 	let (quickFilterText, setQuickFilterText) = React.useState(()=> "")
 	React.useEffect1(() => {
 		gridRef.current->Js.Nullable.toOption->Belt.Option.map(gridRef => {
@@ -134,19 +135,19 @@ let make = () => {
   <>
 	<GenreSelect genre={state.genre} setGenre />
 	<YearSelect year={state.year} setYear />
-		<p> {`Selected row rank ${selectedRow->Belt.Option.map(row => row["rank"])->Belt.Option.getWithDefault("n/a")}`->React.string} </p>
-				<div>
+		// <p> {`Selected row rank ${selectedRow->Belt.Option.map(row => row["rank"])->Belt.Option.getWithDefault("n/a")}`->React.string} </p>
+    <div
+      className="ag-theme-alpine-dark table"
+      style={ReactDOM.Style.make(~height="50vh", ~width="80vw", ())}>
+				<div className="quick-filter">
           <input
 						type_="input"
             onInput={onQuickFilterChanged}
             id="quickFilter"
 						value={quickFilterText}
-            placeholder="quick filter..."
+            placeholder="Search...           by artist, album..."
           />
         </div>
-    <div
-      className="ag-theme-alpine-dark"
-      style={ReactDOM.Style.make(~height="50vh", ~width="80vw", ())}>
 			agGrid
     </div>
   </>
