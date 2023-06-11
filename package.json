@@ -32,6 +32,7 @@
     "request": "^2.88.2",
     "request-promise": "^4.1.1",
     "rescript": "10.1.0-alpha.2",
+    "rescript-webapi": "^0.8.0",
     "spotify-web-api-node": "^5.0.2",
     "sql.js": "^1.8.0",
     "sqlite3": "^5.0.8",

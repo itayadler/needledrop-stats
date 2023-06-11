@@ -1952,6 +1952,11 @@ request@^2.88.2:
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
 
+rescript-webapi@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/rescript-webapi/-/rescript-webapi-0.8.0.tgz#35b76362ed6a32980fdf104dd8300b0703d424ca"
+  integrity sha512-PdjHqho8+kI7AIC3DlLgD99H8zzHphzpIhyv2skVtWaSJGK819+ZqWMC3mHEtSjlcFoYaLXliNt8sb6Taa2Mpg==
+
 rescript@10.1.0-alpha.2:
   version "10.1.0-alpha.2"
   resolved "https://registry.yarnpkg.com/rescript/-/rescript-10.1.0-alpha.2.tgz#f9df7f3fb98a07676236aaf0e789ab60d0210231"

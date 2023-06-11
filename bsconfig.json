@@ -12,5 +12,5 @@
   "reason": {
     "react-jsx": 3
   },
-  "bs-dependencies": ["@rescript/react", "@glennsl/rescript-fetch", "@ryyppy/rescript-promise", "@minnozz/rescript-recharts"]
+  "bs-dependencies": ["rescript-webapi", "@rescript/react", "@glennsl/rescript-fetch", "@ryyppy/rescript-promise", "@minnozz/rescript-recharts"]
 }

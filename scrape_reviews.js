@@ -12,8 +12,9 @@ function saveAllReviewsToFile(filePath){
   resultReviewsStream.pipe(fs.createWriteStream(filePath))
 }
 
-function saveAllReviewsToDb(dbPath) {
-  const db = createDb(dbPath)
+async function saveAllReviewsToDb(dbPath) {
+  const db = await createDb(dbPath)
+  console.log(db)
   getAllReviewsStream()
     .filter((review)=> review.rank > -1)
     .each((review)=> create(db, review))

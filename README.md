@@ -12,7 +12,7 @@ A calculated approach to finding great music to listen to by [theneedledrop.com]
 
 ## DIY
 
-- `npm install`
+- `yarn`
 - `YOUTUBE_API_KEY=your_api_key node index.js //by default outputs to reviews.json`
 
 Note: You will need a Google Developer project running in order to obtain a valid youtube api-key.

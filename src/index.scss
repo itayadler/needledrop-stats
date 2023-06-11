@@ -1,13 +1,50 @@
 @import "ag-grid-community/styles/ag-grid.css";
 @import "ag-grid-community/styles/ag-theme-alpine.css";
+:root {
+	--needledrop-color: #fcf281;
+
+}
 
 body {
 	font-family: Calibri, Helvetica, Arial;
-	background: #fcf281;
+	background: var(--needledrop-color);
 }
 h2 {
 	-webkit-text-stroke: 1px black;
 	text-shadow: -2px 2px 2px black;
 	font-weight: bold;
 	color: white;
+}
+
+.genre-select {
+	display: flex;
+	gap: 14px
+
+}
+.genre-select-all {
+	padding: 20px;
+	border: 2px solid black;
+	border-radius: 6px;
+	margin-right: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	&.selected {
+		background: black;
+		color: var(--needledrop-color);
+	}
+}
+
+li {
+	list-style: none;
+	padding: 20px;
+	border: 2px solid black;
+	border-radius: 6px;
+	cursor: pointer;
+	color: black;
+	font-weight: bold;
+}
+
+li.selected {
+	background: black;
+	color: var(--needledrop-color);
 }
