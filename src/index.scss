@@ -91,3 +91,11 @@ li.selected {
 	background: black;
 	color: var(--needledrop-color);
 }
+
+.tnd-youtube {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 1000000;
+	opacity: 0.75;
+}
